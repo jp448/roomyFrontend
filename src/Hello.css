@@ -1,0 +1,14 @@
+.Hello-form {
+    margin: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: .1;
+}
+
+.Form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto;
+}

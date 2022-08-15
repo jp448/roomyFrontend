@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import Button from "./Button";
-import "./Form.css"
 import Select from 'react-select'
 import { useNavigate } from "react-router-dom";
+import "./Hello.css"
 
 function Hello() {
     const [userChoice, setUserChoice] = useState({});
@@ -44,12 +44,12 @@ function Hello() {
 
     return (
         <div className="Form-container">
-            <form className="Form" onSubmit={handleSubmitEmployee}>
+            <form className="Hello-form" onSubmit={handleSubmitEmployee}>
                 <header className="header">Select an Employee</header>
                 <Select options={employees} onChange={(choice) => setUserChoice(choice)}/>
                 <button type="submit">Submit</button>
             </form>
-            <form className="Form" onSubmit={handleSubmitNewEmployee}>
+            <form className="Hello-form" onSubmit={handleSubmitNewEmployee}>
                 <header className="header">Or Make a new Employee</header>
                 <input
                     type="text"

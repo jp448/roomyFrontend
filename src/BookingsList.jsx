@@ -1,5 +1,6 @@
 import "./BookingsList.css"
 import Button from "./Button";
+import Nav from "./Nav";
 import {useEffect, useState} from "react";
 
 function BookingsList() {
@@ -29,19 +30,22 @@ function BookingsList() {
     }
 
     return (
-        <div className="BookingsList">
-            <header>Manage Your bookings {user}</header>
-            <ul className="List">
-                {userDateBooked.length === 0 ?
-                    <p>Sorry {user} you currently have no bookings</p> :
-                    userDateBooked.map(({date, id}) =>
-                    <li className="List-item" key={id}>
-                        <p>Booked on date: {date}</p>
-                        <p>the id is: {id}</p>
-                        <button onClick={() => handleDelete(id)}>delete</button>
-                    </li>
-                )}
-            </ul>
+        <div>
+            <Nav/>
+            <div className="BookingsList">
+                <header>Manage Your bookings {user}</header>
+                <ul className="List">
+                    {userDateBooked.length === 0 ?
+                        <p>Sorry {user} you currently have no bookings</p> :
+                        userDateBooked.map(({date, id}) =>
+                            <li className="List-item" key={id}>
+                                <p>Booked on date: {date}</p>
+                                <p>the id is: {id}</p>
+                                <button onClick={() => handleDelete(id)}>delete</button>
+                            </li>
+                        )}
+                </ul>
+            </div>
         </div>
     );
 }

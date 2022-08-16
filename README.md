@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+Roomy has an App Component that has the routes used in the App including: 
+1. / (which renders the Hello component asking the user to sign in with either an existing employee or to make a new employee)
+2. /home (which renders teh home component welcoming the user and prompting the user to either make a booking or see their bookings)
+3. /form (which renders the booking calendar so the user can book dates)
+4. /bookings (which renders a list of all the bookings a user currently has and allows them to delete said bookings)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+There is a test suite testing the component Hello using RTL and Jest
 
-## Available Scripts
+The styling is done using CSS
 
-In the project directory, you can run:
+Improvements: 
+1. The entire UI could be improved the only real styling is the navigation buttons
+2. Test suites for all the components
+3. Comments to explain the component and which props it accepts
+4. Styling done with tailwind or scss/styled components to allow for a better DRY solution
+5. The fetch calls I would refactor to use async await (I used .then out of habit)
+6. I would also move the fetch calls out and into a helper file and call these helper fns then (easier to mock in the tests as well)
+7. I would use an authentication feature - right now the user is grabbed from the session and that is not ideal
+8. In the BookingList all bookings are grabbed from the backend and then iterated over to show to the user - I would ideally refactor and only call the backend for the users bookings. Could be a problem in the future if there are lots of users and lots of bookings.
+9. I would add validation to the forms and booking tools (currently you can book several of the same day) 
+10. I would orgainze the files into folders (and with time a Stories from storybook)
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+But being time limited these are features I would add with more time. 

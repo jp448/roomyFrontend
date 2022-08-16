@@ -1,4 +1,4 @@
-import {fireEvent, render, screen} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 import Hello from './Hello';
 import {MemoryRouter, useNavigate} from "react-router-dom";

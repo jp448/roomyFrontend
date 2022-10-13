@@ -12,7 +12,7 @@ function Home() {
     return (
         <div className="Home">
             <header className="Home-header">
-                Welcome to Roomy {user}!
+                Welcome {user}!
             </header>
             <div className="buttons">
                 <div className="button-container">

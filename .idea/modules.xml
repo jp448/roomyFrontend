@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../roomy_fronted.iml" filepath="$PROJECT_DIR$/../roomy_fronted.iml" />
+      <module fileurl="file://$PROJECT_DIR$/booking_tool_sql_frontend.iml" filepath="$PROJECT_DIR$/booking_tool_sql_frontend.iml" />
     </modules>
   </component>
 </project>

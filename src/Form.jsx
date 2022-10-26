@@ -1,6 +1,5 @@
 import BookingPicker from "./BookingPicker";
 import Nav from "./Nav";
-import Button from "./Button";
 import "./Form.css"
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
@@ -13,7 +12,8 @@ function Form() {
     useEffect(() => {
         setUser(window.sessionStorage.getItem("user"));
     }, []);
-    async function handleSubmit (e) {
+
+    async function handleSubmit(e) {
         e.preventDefault();
         fetch(`/employees/byName/${user}`)
             .then(res => res.json())

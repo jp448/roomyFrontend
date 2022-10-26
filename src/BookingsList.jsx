@@ -1,14 +1,16 @@
 import "./BookingsList.css"
-import Button from "./Button";
 import Nav from "./Nav";
 import {useEffect, useState} from "react";
+import Popup from "./Popup";
 
 function BookingsList() {
     const [userDateBooked, setUserDateBooked] = useState([]);
+    const [showPopup, setShowPopup] = useState(false);
+    const [userId, setUserId] = useState(0);
     const user = window.sessionStorage.getItem("user");
 
     useEffect(() => {
-        if(user) {
+        if (user) {
             let userdata = [];
             fetch(`/bookings`)
                 .then(res => res.json())
@@ -19,7 +21,14 @@ function BookingsList() {
                 setUserDateBooked(userdata);
             }));
         }
-    }, [userDateBooked]);
+    }, []);
+
+    function togglePopup(id) {
+        if (showPopup) {
+            setUserId(id);
+        }
+        setShowPopup(!showPopup);
+    }
 
     function handleDelete(id) {
         fetch(`/bookings/${id}`, {
@@ -41,9 +50,11 @@ function BookingsList() {
                             <li className="List-item" key={id}>
                                 <p>Booked on date: {date}</p>
                                 <p>the id is: {id}</p>
+                                <button onClick={() => togglePopup(id)}>update</button>
                                 <button onClick={() => handleDelete(id)}>delete</button>
                             </li>
                         )}
+                    {showPopup ? <Popup text={"Choose a new date"} closePopup={togglePopup} userId={userId} user={user}/> : null}
                 </ul>
             </div>
         </div>

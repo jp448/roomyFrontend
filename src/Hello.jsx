@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import Button from "./Button";
 import Select from 'react-select'
 import { useNavigate } from "react-router-dom";
 import "./Hello.css"
@@ -15,7 +14,7 @@ function Hello() {
         fetch("/employees")
             .then(response => response.json())
             .then(data => setEmployees(data.map((employee) => {
-                return { value: employee.name, label: employee.name }
+                return { value: employee.name, label: employee.name, id: employee.id }
             })));
     }, []);
 
